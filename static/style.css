@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 50px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 17px;
+}
+
+.card,
+.result-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.card h2,
+.result-card h2 {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #555;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+.sentiment {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.metrics {
+    display: flex;
+    gap: 20px;
+}
+
+.metric {
+    flex: 1;
+    background: #f4f6f8;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.metric span {
+    display: block;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.metric strong {
+    font-size: 24px;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        margin: 30px auto;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .metrics {
+        flex-direction: column;
+    }
+}
+.sentiment.positive {
+    color: #198754;
+}
+
+.sentiment.negative {
+    color: #dc3545;
+}
+
+.sentiment.neutral {
+    color: #6c757d;
+}
+.metric small {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    font-size: 12px;
+}
+
+.score-info {
+    margin-top: 25px;
+    padding: 18px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.score-info p {
+    margin-bottom: 10px;
+}
+
+.score-info p:last-child {
+    margin-bottom: 0;
+}
+
+.clear-button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #222;
+    background: white;
+}
+
+.clear-button:hover {
+    background: #f4f6f8;
+}
+.error-message {
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}

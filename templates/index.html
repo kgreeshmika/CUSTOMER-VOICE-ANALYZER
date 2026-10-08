@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Voice Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Customer Voice Analyzer</h1>
+            <p>Understand your customers through their feedback.</p>
+        </header>
+
+
+        <section class="card">
+
+            <h2>Analyze Customer Feedback</h2>
+
+            <form method="POST">
+                {% if error %}
+                    <div class="error-message">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
+                <textarea
+                    name="feedback"
+                    placeholder="Enter customer feedback here..."
+                    required>{{ feedback }}</textarea>
+
+                <button type="submit">
+                    Analyze Feedback
+                </button>
+
+            </form>
+
+        </section>
+
+
+        {% if sentiment %}
+
+        <section class="result-card">
+
+            <h2>Analysis Result</h2>
+
+            <div class="sentiment {{ sentiment|lower }}">
+                {{ sentiment }}
+            </div>
+
+            <div class="metrics">
+
+    <div class="metric">
+        <span>Polarity</span>
+        <strong>{{ polarity }}</strong>
+        <small>Range: -1 to +1</small>
+    </div>
+
+    <div class="metric">
+        <span>Subjectivity</span>
+        <strong>{{ subjectivity }}</strong>
+        <small>Range: 0 to 1</small>
+    </div>
+
+</div>
+
+<div class="score-info">
+
+    <p>
+        <strong>Polarity:</strong>
+        Indicates how positive or negative the feedback is.
+    </p>
+
+    <p>
+        <strong>Subjectivity:</strong>
+        Indicates how much the feedback expresses personal opinion
+        rather than factual information.
+    </p>
+
+</div>
+
+<a href="/" class="clear-button">Analyze Another Feedback</a>
+
+        </section>
+
+        {% endif %}
+
+
+        <footer>
+            <p>Powered by Python, Flask & TextBlob</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
